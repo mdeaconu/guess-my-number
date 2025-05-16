@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StartGameScreen from "./screens/StartGameScreen";
 import { styles } from "./App.styles";
 import { LinearGradient } from "expo-linear-gradient";
-import { ImageBackground } from "react-native";
+import { ImageBackground, SafeAreaView } from "react-native";
 import backgroundImage from "./assets/images/background.png";
 import GameScreen from "./screens/GameScreen";
 
@@ -27,7 +27,7 @@ const App = () => {
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
       >
-        {screen}
+        <SafeAreaView>{screen}</SafeAreaView>
       </ImageBackground>
     </LinearGradient>
   );
