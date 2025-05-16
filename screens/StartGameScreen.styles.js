@@ -2,6 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   inputContainer: {
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#4e0329",
     borderRadius: 8,
     elevation: 4,
@@ -26,5 +28,11 @@ export const styles = StyleSheet.create({
     marginVertical: 8,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
   },
 });
