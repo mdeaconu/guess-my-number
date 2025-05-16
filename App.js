@@ -15,7 +15,7 @@ const App = () => {
   }
 
   const screen = userNumber ? (
-    <GameScreen />
+    <GameScreen userNumber={userNumber} />
   ) : (
     <StartGameScreen onPickNumber={pickedNumberHandler} />
   );
