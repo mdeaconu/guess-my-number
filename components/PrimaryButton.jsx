@@ -3,7 +3,7 @@ import { Text, View, Pressable } from "react-native";
 import PropTypes from "prop-types";
 import { styles } from "./PrimaryButton.style";
 
-const PrimaryButton = ({ children }) => {
+const PrimaryButton = ({ children, onPress }) => {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
@@ -12,7 +12,7 @@ const PrimaryButton = ({ children }) => {
             ? [styles.buttonInnerContainer, styles.pressed]
             : styles.buttonInnerContainer
         }
-        onPress={() => console.log("pressed")}
+        onPress={onPress}
         android_ripple={{ color: "#640233" }}
       >
         <Text style={styles.buttonText}>{children}</Text>
@@ -23,6 +23,7 @@ const PrimaryButton = ({ children }) => {
 
 PrimaryButton.propTypes = {
   children: PropTypes.object,
+  onPress: PropTypes.func,
 };
 
 export default PrimaryButton;
