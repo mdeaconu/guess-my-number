@@ -29,6 +29,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
     }
   }, [currentGuess, userNumber, onGameOver]);
 
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
+
   function nextGuessHandler(direction) {
     // direction => 'lower', 'greater'
     if (
@@ -62,12 +67,12 @@ const GameScreen = ({ userNumber, onGameOver }) => {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              <Ionicons name="md-remove" size={24} color="white" />
+              <Ionicons name="remove-outline" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              <Ionicons name="md-add" size={24} color="white" />
+              <Ionicons name="add-outline" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
