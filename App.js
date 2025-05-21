@@ -3,7 +3,6 @@ import StartGameScreen from "./screens/StartGameScreen";
 import { styles } from "./App.styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { ImageBackground, SafeAreaView } from "react-native";
-import backgroundImage from "./assets/images/background.png";
 import GameScreen from "./screens/GameScreen";
 import Colors from "./constants/colors";
 import GameOverScreen from "./screens/GameOverScreen";
@@ -12,7 +11,7 @@ import AppLoading from "expo-app-loading";
 
 const App = () => {
   const [userNumber, setUserNumber] = useState();
-  const [gameIsOver, setGameIsOver] = useState(false);
+  const [gameIsOver, setGameIsOver] = useState(true);
   const [guessRounds, setGuessRounds] = useState(0);
 
   const [fontsLoaded] = useFonts({
@@ -26,18 +25,22 @@ const App = () => {
 
   function pickedNumberHandler(pickedNumber) {
     setUserNumber(pickedNumber);
+    setGameIsOver(false);
   }
 
   let screen = userNumber ? (
     <GameScreen
       userNumber={userNumber}
-      onGameOver={() => setGameIsOver(true)}
+      onGameOver={(numberOfRounds) => {
+        setGuessRounds(numberOfRounds);
+        setGameIsOver(true);
+      }}
     />
   ) : (
     <StartGameScreen onPickNumber={pickedNumberHandler} />
   );
 
-  if (gameIsOver) {
+  if (gameIsOver && userNumber) {
     screen = (
       <GameOverScreen
         userNumber={userNumber}
@@ -56,7 +59,7 @@ const App = () => {
       style={styles.rootScreen}
     >
       <ImageBackground
-        source={backgroundImage}
+        source={require("./assets/images/background.png")}
         resizeMode="cover"
         style={styles.rootScreen}
         imageStyle={styles.backgroundImage}
