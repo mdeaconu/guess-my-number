@@ -2,22 +2,10 @@ import { StyleSheet } from "react-native";
 import Colors from "../constants/colors";
 
 export const styles = StyleSheet.create({
-  inputContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Colors.primary800,
-    borderRadius: 8,
-    elevation: 4,
-    marginHorizontal: 24,
+  rootContainer: {
+    flex: 1,
     marginTop: 100,
-    padding: 16,
-    shadowColor: "black",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowRadius: 6,
-    shadowOpacity: 0.25,
+    alignItems: "center",
   },
   numberInput: {
     height: 50,
