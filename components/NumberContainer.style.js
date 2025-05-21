@@ -14,6 +14,6 @@ export const styles = StyleSheet.create({
   text: {
     color: Colors.accent500,
     fontSize: 36,
-    fontWeight: "bold",
+    fontFamily: "open-sans-bold",
   },
 });
