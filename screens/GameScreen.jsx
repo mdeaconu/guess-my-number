@@ -1,14 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Alert, FlatList, Text, useWindowDimensions, View } from "react-native";
+import { Alert, FlatList, useWindowDimensions, View } from "react-native";
 import PropTypes from "prop-types";
 import { Ionicons } from "@expo/vector-icons";
+
 import Card from "../components/Card";
+import GuessLogItem from "../components/GuessLogItem";
 import InstructionText from "../components/InstructionText";
 import NumberContainer from "../components/NumberContainer";
 import PrimaryButton from "../components/PrimaryButton";
 import Title from "../components/Title";
+
 import { styles } from "./GameScreen.style";
-import GuessLogItem from "../components/GuessLogItem";
 
 function generateRandomBetween(min, max, exclude) {
   const random = Math.floor(Math.random() * (max - min)) + min;

@@ -8,10 +8,12 @@ import {
   View,
 } from "react-native";
 import PropTypes from "prop-types";
-import PrimaryButton from "../components/PrimaryButton";
-import Title from "../components/Title";
+
 import Card from "../components/Card";
 import InstructionText from "../components/InstructionText";
+import PrimaryButton from "../components/PrimaryButton";
+import Title from "../components/Title";
+
 import { styles } from "./StartGameScreen.styles";
 
 const StartGameScreen = ({ onPickNumber }) => {

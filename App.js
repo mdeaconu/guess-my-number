@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import StartGameScreen from "./screens/StartGameScreen";
-import { styles } from "./App.styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { ImageBackground, SafeAreaView } from "react-native";
-import GameScreen from "./screens/GameScreen";
-import Colors from "./constants/colors";
-import GameOverScreen from "./screens/GameOverScreen";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
+
+import Colors from "./constants/colors";
+import GameScreen from "./screens/GameScreen";
+import GameOverScreen from "./screens/GameOverScreen";
+import StartGameScreen from "./screens/StartGameScreen";
+
+import { styles } from "./App.styles";
 
 const App = () => {
   const [userNumber, setUserNumber] = useState();

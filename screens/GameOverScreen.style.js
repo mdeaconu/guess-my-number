@@ -1,7 +1,5 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import Colors from "../constants/colors";
-
-const deviceWidth = Dimensions.get("window").width;
 
 export const styles = StyleSheet.create({
   rootContainer: {
@@ -12,10 +10,7 @@ export const styles = StyleSheet.create({
   },
   imageContainer: {
     borderColor: Colors.primary800,
-    borderRadius: deviceWidth < 380 ? 75 : 150,
     borderWidth: 3,
-    height: deviceWidth < 380 ? 150 : 300,
-    width: deviceWidth < 380 ? 150 : 300,
     overflow: "hidden",
     margin: 36,
   },
